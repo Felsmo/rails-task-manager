@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-4 col-xs-offset-3">
+
+      <% @tasks.each do |task| %>
+      <h2><%= link_to task.name.capitalize, task_path(task) %></h2>
+      <p><%= task.details %></p>
+      <%= link_to "Delete", task, method: :delete%>
+
+      <% end %>
+      <br>
+      <br>
+      <h2><%= link_to "create new!", new_task_path%></h2>
+      <br>
+      <br>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!--
+Should display a list of all tasks and, for each task:
+a link to its show view (use a link_to helper)
+a link to its edit view
+a link to its delete action. Hint: a standard link does not allow to perform DELETE request, so here you should add a method: :delete option to your link_to helper. -->
